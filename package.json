@@ -1,0 +1,51 @@
+{
+  "name": "easybi",
+  "version": "1.0.0",
+  "description": "1、Spark作业的提交：\r 提交到本地：Spark-submit --class … --master local[2] /path/to/….jar [optional parameter]\r 提交到standalone集群:Spark-submit --class … --master spark://IP:host --deploy-mode cluster /path/to/….jar [optional parameter]\r 提交到yarn集群:Spark-submit --class … --master yarn /path/to/….jar [optional parameter]]\r 涉及其他参数可在命令行输入spark-submit获得参数解释\r 2、spark应用程序运行机理：\r 1）资源调度：\r Spark（standalone）为典型的Master-slaves结构。应用程序向集群提交主要分为client模式和cluster模式。client应用程序的提交流程描述如下：\r 首先client将application提交到master,像master注册应用程序信息，如用多少资源，以及配置等，完成driver的注册。此时worker仍不停的向master汇报集群资源情况，driver会将当前的application注册给master。master根据集群资源启动executor。driver分发任务到executor中执行。\r cluster模式下master会在workers中启动一个driver。",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack serve -c scripts/webpack.dev.js",
+    "build": "cross-env NODE_ENV=production webpack serve -c scripts/webpack.prod.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kxg916361108/easybi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kxg916361108/easybi/issues"
+  },
+  "homepage": "https://github.com/kxg916361108/easybi#readme",
+  "devDependencies": {
+    "@babel/core": "^7.23.2",
+    "@babel/preset-env": "^7.23.2",
+    "@babel/preset-react": "^7.22.15",
+    "@babel/preset-typescript": "^7.23.2",
+    "@types/react": "^18.2.31",
+    "@types/react-dom": "^18.2.14",
+    "babel-loader": "^9.1.3",
+    "clean-webpack-plugin": "^4.0.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.8.1",
+    "css-minimizer-webpack-plugin": "^5.0.1",
+    "html-webpack-plugin": "^5.5.3",
+    "less": "^4.2.0",
+    "less-loader": "^11.1.3",
+    "mini-css-extract-plugin": "^2.7.6",
+    "postcss": "^8.4.31",
+    "postcss-loader": "^7.3.3",
+    "postcss-preset-env": "^9.2.0",
+    "style-loader": "^3.3.3",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1",
+    "webpack-merge": "^5.10.0",
+    "yarn": "^1.22.19"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
