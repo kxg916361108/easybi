@@ -37,13 +37,11 @@ module.exports = {
             {
                 test: /\.(png|jpe?g|gif|svg|webp)$/i,
                 use: [
-                    // {
-                    //   loader: 'file-loader',
-                    // },
                     {
                         loader: 'url-loader',
                         options: {
-                            limit: 2000,
+                            limit: 8192,
+                            name: `[name].[ext]`,
                             // //限制打包图片的大小：
                             // //如果大于或等于2000Byte，则按照相应的文件名和路径打包图片；如果小于2000Byte，则将图片转成base64格式的字符串。
                             // name: 'img/[name].[hash:8].[ext]',
@@ -61,6 +59,11 @@ module.exports = {
                         loader: 'url-loader',
                     },
                 ],
+            },
+            {
+                test: /\.(json)$/,
+                loader: 'json-loader',
+                type: 'javascript/auto', //需要添加该配置，否则Json文件不会被推断成JavaScript模块，导致JSON文件解析报错
             },
 
         ],

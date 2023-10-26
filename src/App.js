@@ -1,9 +1,13 @@
 import React from 'react';
+import Login from "./components/login/Login";
+import i18n from "./locale/LocalUtil"
 import './App.less';
 function App() {
     return (
         <div className="main-container">
-            Hello Kxg916361108!
+            <div  className="content-wrapper" data-testid="content-wrapper">
+                <Login/>
+            </div>
         </div>
     );
 }
