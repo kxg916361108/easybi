@@ -32,13 +32,3 @@ export const LOGIN_SLIDE = [
         descriptionKey: 'deeply-understand-table-relations-message',
     },
 ];
-
-// const LOGIN_CAROUSEL_SETTINGS: CarouselProps = {
-//     autoplay: true,
-//     prefixCls: 'login-carousel',
-//     dots: {
-//         className: 'carousel-dots',
-//     },
-//     slidesToShow: 1,
-//     slidesToScroll: 1,
-// };

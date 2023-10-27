@@ -1,0 +1,21 @@
+@import (reference) url('../../styles/variables.less');
+
+.page-not-found-container {
+  position: relative;
+  height: calc(100vh - 64px);
+
+  .not-found-text-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .text-column {
+    background-color: @background-color;
+  }
+
+  .image-column {
+    background-color: @body-bg-color;
+  }
+}
